@@ -3,6 +3,8 @@ package ru.degtyar.geekbrains.spring;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
  * Unit test for simple App.
@@ -34,5 +36,13 @@ public class AppTest
     public void testApp()
     {
         assertTrue( true );
+    }
+
+    public void test(){
+        final ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class);
+        final User user = appContext.getBean(User.class);
+        assertNotNull(user);
+        TestCase.assertEquals(user.getName(), "Vasiliy");
+
     }
 }
