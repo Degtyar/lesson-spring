@@ -1,13 +1,14 @@
 package ru.degtyar.geekbrains.spring;
 
-/**
- * Hello world!
- *
- */
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 public class App 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfigCamera.class);
+        Camera camera = appContext.getBean("camera",Camera.class);
+        camera.doPhotograph();
     }
 }
