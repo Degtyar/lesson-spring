@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfigCamera {
 
     @Bean(name = "camera")
-    public Camera camera(CameraRoll cameraRoll) {
+    public Camera camera(CameraRoll  cameraRoll) {
         Camera camera = new CameraImpl();
         camera.setCameraRoll(cameraRoll);
         return camera;

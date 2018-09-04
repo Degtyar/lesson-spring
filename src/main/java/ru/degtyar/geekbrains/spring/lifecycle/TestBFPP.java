@@ -15,10 +15,11 @@ public class TestBFPP implements BeanFactoryPostProcessor {
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
 
         String[] beanDefinitionNames = beanFactory.getBeanDefinitionNames();
-
+        System.out.println("[TestBFPP]");
         for(String name: beanDefinitionNames){
             BeanDefinition beanDefinition = beanFactory.getBeanDefinition(name);
             System.out.println(beanDefinition.toString());
         }
+        System.out.println("[TestBFPP - end]");
     }
 }
