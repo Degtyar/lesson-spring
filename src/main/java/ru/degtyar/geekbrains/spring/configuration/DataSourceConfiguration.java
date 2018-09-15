@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 import java.util.Properties;
 
+
 @EnableTransactionManagement
 @PropertySource("classpath:db-conf.properties")
 public class DataSourceConfiguration {
@@ -33,14 +34,14 @@ public class DataSourceConfiguration {
     }
 
     @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory(
+      public LocalContainerEntityManagerFactoryBean entityManagerFactory(
             final DataSource dataSource,
             @Value("${hibernate.max_fetch_depth}") final int maxFetchDepth,
             @Value("${hibernate.jdbc.fetch_size}") final int fetchSize,
             @Value("${hibernate.max_batch_size}") final int batchSize,
             @Value("${hibernate.show_sql}") final boolean showSql,
             @Value("${hibernate.hbm2ddl.auto}") final String tableStrategy
-            ) {
+    ) {
         final LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
         factoryBean.setDataSource(dataSource);
         factoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
@@ -51,6 +52,7 @@ public class DataSourceConfiguration {
         properties.put("hibernate.max_batch_size", batchSize);
         properties.put("hibernate.show_sql", showSql);
         properties.put("hibernate.hbm2ddl.auto", tableStrategy);
+        properties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
         factoryBean.setJpaProperties(properties);
         return factoryBean;
     }
@@ -60,7 +62,6 @@ public class DataSourceConfiguration {
         final JpaTransactionManager transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(entityManagerFactory.getObject());
         return transactionManager;
-
     }
 
 }
