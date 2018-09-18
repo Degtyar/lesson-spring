@@ -16,10 +16,5 @@ import ru.degtyar.geekbrains.spring.CameraRoll;
 @Import(DataSourceConfiguration.class)
 public class ApplicationConfiguration {
 
-    @Bean(name = "camera")
-    public Camera camera(CameraRoll cameraRoll) {
-        Camera camera = new CameraImpl();
-        camera.setCameraRoll(cameraRoll);
-        return camera;
-    }
+
 }

@@ -8,8 +8,8 @@ public class App
 {
     public static void main( String[] args )
     {
-        ApplicationContext appContext = new AnnotationConfigApplicationContext(ApplicationConfiguration.class);
-        Camera camera = appContext.getBean("camera",Camera.class);
-        camera.doPhotograph();
+      //  ApplicationContext appContext = new AnnotationConfigApplicationContext(ApplicationConfiguration.class);
+        //Camera camera = appContext.getBean("camera",Camera.class);
+        //camera.doPhotograph();
     }
 }

@@ -8,9 +8,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import ru.degtyar.geekbrains.spring.configuration.DataSourceConfiguration;
 import javax.sql.DataSource;
 
-@Configuration
-@ComponentScan("ru.degtyar.geekbrains.spring")
-@Import(DataSourceConfiguration.class)
+//@Configuration
+//@ComponentScan("ru.degtyar.geekbrains.spring")
+//@Import(DataSourceConfiguration.class)
 public class AppConfigCamera {
 
     @Bean(name = "camera")
