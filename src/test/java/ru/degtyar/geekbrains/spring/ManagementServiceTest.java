@@ -1,7 +1,4 @@
 package ru.degtyar.geekbrains.spring;
-
-
-import org.aspectj.lang.annotation.SuppressAjWarnings;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +19,13 @@ public class ManagementServiceTest {
     @Test
     public void test(){
         Category category = new Category();
-        category.setId("1");
+        category.setId("2");
         category.setName("Category");
         categoryService.save(category);
+    }
+
+    @Test
+    public void test2(){
+        categoryService.deleteById("2");
     }
 }
