@@ -16,6 +16,6 @@ public class TestServlet extends HttpServlet{
 
     protected void doGet (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         final String name = req.getParameter("name");
-        resp.getWriter().print("Get Reguest" + name);
+        resp.getWriter().print("Hello ! " + name);
     }
 }
