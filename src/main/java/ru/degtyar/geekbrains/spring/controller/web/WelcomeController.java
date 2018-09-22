@@ -1,4 +1,4 @@
-package ru.degtyar.geekbrains.spring.controller;
+package ru.degtyar.geekbrains.spring.controller.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;

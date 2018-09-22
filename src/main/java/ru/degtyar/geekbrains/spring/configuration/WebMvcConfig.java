@@ -11,6 +11,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 import java.util.ResourceBundle;
 
+
 @EnableWebMvc
 @ComponentScan(basePackages = "ru.degtyar.geekbrains.spring")
 public class WebMvcConfig implements WebMvcConfigurer{

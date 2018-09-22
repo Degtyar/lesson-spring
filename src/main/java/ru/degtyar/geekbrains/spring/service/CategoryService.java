@@ -6,6 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ru.degtyar.geekbrains.spring.dto.CategoryDTO;
 import ru.degtyar.geekbrains.spring.model.Category;
 import ru.degtyar.geekbrains.spring.repository.CategoryRepository;
 
