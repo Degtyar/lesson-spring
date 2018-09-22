@@ -2,12 +2,13 @@ package ru.degtyar.geekbrains.spring.model;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.UUID;
 
 @Entity
 public class Article extends AbstractModel {
 
     @Id
-    private String id;
+    private String id = UUID.randomUUID().toString();
 
     @Column
     private String name;
@@ -56,5 +57,20 @@ public class Article extends AbstractModel {
         this.noticeText = noticeText;
     }
 
+    public List<Category> getCategory() {
+        return category;
+    }
+
+    public void setCategory(List<Category> category) {
+        this.category = category;
+    }
+
+    public String getCompany() {
+        return company.getId();
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
 }
 
