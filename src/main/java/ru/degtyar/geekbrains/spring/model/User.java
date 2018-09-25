@@ -14,7 +14,7 @@ import java.util.UUID;
 @Data
 @Setter
 @Entity
-@NoArgsConstructor
+
 public class User {
 
     @Id
@@ -47,6 +47,9 @@ public class User {
         this.login = login;
         this.email = email;
         this.password = password;
+    }
+
+    public User() {
     }
 
     public String getPassword() {
