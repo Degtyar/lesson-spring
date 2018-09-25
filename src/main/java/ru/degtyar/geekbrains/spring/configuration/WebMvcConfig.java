@@ -3,15 +3,17 @@ package ru.degtyar.geekbrains.spring.configuration;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 import java.util.ResourceBundle;
 
-
+@Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "ru.degtyar.geekbrains.spring")
 public class WebMvcConfig implements WebMvcConfigurer{
@@ -30,5 +32,10 @@ public class WebMvcConfig implements WebMvcConfigurer{
         final ResourceBundleMessageSource source = new ResourceBundleMessageSource();
         source.setBasename("messages");
         return source;
+    }
+
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/login").setViewName("login");
     }
 }
