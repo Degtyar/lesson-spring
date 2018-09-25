@@ -12,6 +12,7 @@ import ru.degtyar.geekbrains.spring.repository.UserRepository;
 import java.util.ArrayList;
 import java.util.List;
 
+@Transactional
 @Service("userDetailsService")
 public class UserDetailsServiceBean implements UserDetailsService {
 

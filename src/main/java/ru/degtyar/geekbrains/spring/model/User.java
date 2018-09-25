@@ -75,4 +75,8 @@ public class User {
     public void setDisabled(boolean disabled) {
         this.disabled = disabled;
     }
+
+    public String getEmail() {
+        return email;
+    }
 }

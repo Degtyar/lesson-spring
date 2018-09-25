@@ -13,6 +13,7 @@ import ru.degtyar.geekbrains.spring.repository.UserRepository;
 import java.security.Principal;
 
 @Service
+@Transactional
 public class AuthService {
 
     @Autowired
